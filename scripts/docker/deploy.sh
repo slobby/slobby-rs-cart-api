@@ -1,12 +1,11 @@
 #!/bin/bash
 
 #ENV=development
-ENV=develop
+ENV=devel
 
-REGION=eu-central-1
-AWS_ACCOUNT_ID=724443507988
-#PROFILE=default
-PROFILE=personalAccount
+REGION=eu-west-1
+AWS_ACCOUNT_ID=892398644316
+PROFILE=default
 
 AWS_DOCKER_REGISTRY_URL=$AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
 

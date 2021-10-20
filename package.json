@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "publish:image": "git-bash.exe ./scripts/dockerbuild-and-publish.sh",
+    "publish:image": "git-bash.exe ./scripts/docker/build-and-publish.sh",
     "eb:deploy": "eb deploy",
     "deploy": "/scripts/docker/deploy.bat",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
