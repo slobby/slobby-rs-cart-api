@@ -17,22 +17,23 @@ COPY . ./
 RUN npm run build
 
 # production image
-FROM alpine:3.13 as production
+FROM node:17.0.0-alpine as production
 
 # Dependencies
-RUN apk add --update nodejs npm && rm -rf /var/cache/apk/*
+# RUN apk add --update nodejs npm && rm -rf /var/cache/apk/*
 
 # Create user
-RUN addgroup -S node && adduser -S node -G node
-USER node
+# RUN addgroup -S node && adduser -S node -G node
+# USER node
+ENV NODE_ENV=production
 
 # Copy app
 WORKDIR /usr/app
 COPY --from=base /usr/app/package.json ./
 RUN npm install --only=production
-COPY --from=build /usr/app/dist ./
+# COPY --from=build /usr/app/dist ./
 
 # Application
 ENV PORT=8080
 EXPOSE 8080
-CMD ["node", "main.js"]
+# CMD ["node", "main.js"]
