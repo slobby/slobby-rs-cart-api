@@ -1,19 +1,38 @@
-# Base
-FROM node:12
+# Base image
+FROM node:14 as base
 
-WORKDIR /app
+WORKDIR /usr/app
 
 # Dependencies
 COPY package*.json ./
 RUN npm install
 
+# Build image
+FROM base as build
+
+WORKDIR /usr/app
+
 # Build
-COPY . .
+COPY src ./
 RUN npm run build
 
-# Application
-USER node
-ENV PORT=8080
-EXPOSE 8080
+# production image
+# FROM alpine:3.13 as production
 
-CMD ["node", "dist/main.js"]
+# # Dependencies
+# RUN apk add --update nodejs npm
+
+# # Create user
+# RUN addgroup -S node && adduser -S node -G node
+# USER node
+
+# # Copy app
+# WORKDIR /usr/app
+# COPY --from=base /usr/app/package.json ./
+# RUN npm install --only=production
+# COPY --from=build /usr/app/dist ./
+
+# # Application
+# ENV PORT=8080
+# EXPOSE 8080
+# CMD ["node", "main.js"]
