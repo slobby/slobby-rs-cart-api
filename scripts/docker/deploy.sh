@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ENV=development
-# ENV=develop
+# ENV=development
+ENV=develop
 
 REGION=eu-west-1
 AWS_ACCOUNT_ID=892398644316
