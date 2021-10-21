@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#ENV=development
-ENV=devel
+ENV=development
+# ENV=develop
 
 REGION=eu-west-1
 AWS_ACCOUNT_ID=892398644316
@@ -15,4 +15,3 @@ aws ecr get-login-password --profile $PROFILE --region $REGION | docker login --
 
 # Deploy app
 eb deploy $ENV
-# npm run deploy -- $ENV
