@@ -3,7 +3,7 @@
 REGION=eu-west-1
 AWS_ACCOUNT_ID=892398644316
 PROFILE=default
-DOCKER_APP_NAME=slobby-cart-api
+# DOCKER_APP_NAME=slobby-cart-api
 
 DOCKER_APP_REPOSITORY=slobby-cart-api
 AWS_DOCKER_REGISTRY_URL=$AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
