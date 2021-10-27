@@ -1,12 +1,11 @@
 #!/bin/bash
 
-REGION=us-west-1
-AWS_ACCOUNT_ID=
+REGION=eu-west-1
+AWS_ACCOUNT_ID=892398644316
 PROFILE=default
-#PROFILE=personalAccount
-DOCKER_APP_NAME=my-cart-api
+# DOCKER_APP_NAME=slobby-cart-api
 
-DOCKER_APP_REPOSITORY=my-cart-api
+DOCKER_APP_REPOSITORY=slobby-cart-api
 AWS_DOCKER_REGISTRY_URL=$AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
 DOCKER_TIME_TAG="$(date +%s)"
 DOCKER_LATEST_TAG=latest
